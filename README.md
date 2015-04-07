@@ -463,7 +463,7 @@ session.resizeWindow(320, 480);
 * `refresh()` - Refreshes the current page.
 * `saveScreenshot(filename)` - Saves a screenshot to `/yourResultsDir/screenshots/filename`. This is called automatically on test failure.
 * `deleteAllCookies()` - Deletes all cookies.
-* `addCookie(name, value, optDomain, optPath, optIsSecure)` - Adds a cookie.
+* `addCookie(name, value, optDomain, optPath, optIsSecure, optExpiry)` - Adds a cookie.
 * `getCookie(name)` - Gets a cookie by name.
 * `currentUrl(handler)` - Gets the current url as a parsed [url](http://nodejs.org/api/url.html) object. e.g:
 ```javascript
