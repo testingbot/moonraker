@@ -28,12 +28,9 @@ _note: ceci est la traduction française du [README](./README.md) original_
 
 ### Dernière version
 
-La version actuelle de Moonraker est la 0.3.2. Les changements récents comprennent :
-* Gestion de l'internationalisation. Les fonctionalités / étapes peuvent être écrites dans n'importe quelle langue que Yadda prend en charge.
-* La traduction des rapports Moonraker est également prise en charge.
-* Les traductions en français (mises à jour de ce README, exemple i18n et traduction des rapports) fournies par [poum](https://github.com/poum).
-* Patch/fix fourni par [vectart](https://github.com/vectart)
-
+La version actuelle de Moonraker est la 0.3.3. Les changements récents comprennent :
+* traduction des rapports en russe et correction de la recherche des étapes par [vectart](https://github.com/vectart).
+* disponibilité des rapports hors connexion par [poum](https://github.com/poum).
 
 ### Installation
 
