@@ -16,7 +16,7 @@ Integrating [Yadda](https://github.com/acuminous/yadda), [Selenium-Webdriver](ht
 * [Feature Tags](#feature-tags)
 * [Assertions](#assertions)
 * [CoffeeScript](#coffeescript)
-* [Saucelabs / Browserstack integration](#saucelabs--browserstack-integration)
+* [Saucelabs / Browserstack / TestingBot integration](#saucelabs--browserstack-testingbot-integration)
 * [Running your tests in parallel](#running-your-tests-in-parallel)
 * [Reporting](#reporting)
 * [Page object reference](#page-object-reference)
@@ -89,7 +89,7 @@ The example configuration above assumes using Chrome directly, to connect to a r
 
 `"seleniumServer": "http://127.0.0.1:4444/wd/hub"`.
 
-You can use this to connect to cloud service providers like [Saucelabs](https://saucelabs.com/) and [Browserstack](https://www.browserstack.com/automate). Please see [below]() for example browser configurations.
+You can use this to connect to cloud service providers like [Saucelabs](https://saucelabs.com/), [Browserstack](https://www.browserstack.com/automate) and [TestingBot](https://testingbot.com/). Please see [below]() for example browser configurations.
 
 You can also set which language to use, using `language`, if you intend to use non English feature & step definition files. A full list of supported languages is available [here](https://github.com/acuminous/yadda/tree/master/lib/localisation).
 
@@ -322,9 +322,9 @@ exports.define = (steps) ->
     searchResults.heading.getText().then (text) ->
       text.should.equal heading
 ```
-### Saucelabs / Browserstack integration
+### Saucelabs / Browserstack / TestingBot integration
 
-To run your tests on cloud service providers like [Saucelabs](https://saucelabs.com/) and [Browserstack](https://www.browserstack.com/automate) you just need to configure Moonraker with the correct `seleniumServer` address and browser capabilities that include your username/access key:
+To run your tests on cloud service providers like [Saucelabs](https://saucelabs.com/), [Browserstack](https://www.browserstack.com/automate) and [TestingBot](https://testingbot.com) you just need to configure Moonraker with the correct `seleniumServer` address and browser capabilities that include your username/access key:
 
 Saucelabs:
 ```json
@@ -352,11 +352,25 @@ Browserstack:
     "resolution": "1920x1080"
   }
 ```
+TestingBot:
+```json
+"seleniumServer": "http://hub.testingbot.com:80/wd/hub",
+
+  "browser": {
+    "client_key": "USERNAME",
+    "client_secret": "KEY",
+    "browserName": "firefox",
+    "version": "39",
+    "platform": "YOSEMITE"
+  }
+```
 Note: As you can see in these examples each provider specifies capabilites differently so you will need to refer to your provider documentation:
 
 https://docs.saucelabs.com/reference/platforms-configurator/
 
 http://www.browserstack.com/automate/capabilities
+
+https://testingbot.com/support/other/test-options
 
 ### Running your tests in parallel
 
